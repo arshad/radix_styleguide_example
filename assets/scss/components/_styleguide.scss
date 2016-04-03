@@ -1,0 +1,112 @@
+// Styleguide
+// -----------------------------------------------------------------------------
+.styleguide {
+  border: 1px solid gainsboro;
+  max-width: 1000px;
+  margin: 2em;
+  background-color: lighten(#6f5499, 50);
+  
+  @include breakpoint(md) {
+    margin: 2em auto;
+  }
+
+  &__sidebar {
+    display: none;
+    padding: 2em;
+
+    @include breakpoint(md) {
+      display: block;
+      float: left;
+      width: 20%;
+    }
+
+    ul {
+      list-style: none outside none;
+      margin: 0 0 2em;
+      padding: 0;
+
+      li {
+
+        a {
+          color: $gray-light;
+          display: block;
+          padding: 0.5em 0;
+          text-align: right;
+
+          &:hover, &:focus {
+            background-color: transparent;
+            color: $brand-primary;
+          }
+        }
+      }
+    }
+
+    > ul {
+
+      > li  {
+
+        > a {
+          font-weight: bold;
+          color: $gray;
+        }
+      }
+    }
+  }
+
+  &__content {
+    padding: 2em;
+    background: white;
+
+    @include breakpoint(md) {
+      float: left;
+      width: 80%;
+      border-left: 1px solid gainsboro;
+    }
+  }
+}
+
+// Component
+// -----------------------------------------------------------------------------
+.styleguide__component {
+  margin: 0 0 50px;
+  padding: 0 0 80px;
+  border-bottom: 1px solid gainsboro;
+
+  h2, h4 {
+    margin-top: 1.5em;
+  }
+}
+
+// Palette
+// -----------------------------------------------------------------------------
+.color-palette {
+  overflow: hidden;
+
+  &__item {
+    margin: 0 3px 3px 0;
+    float: left;
+    width: 80px;
+    height: 80px;
+    padding: 10px;
+    font-size: 12px;
+  }
+}
+
+// Prism.
+// -----------------------------------------------------------------------------
+pre[class*="language"],
+pre[class*=" language"] {
+  border: 0;
+  box-shadow: none;
+
+  &:before,
+  &:after {
+    box-shadow: none;
+  }
+}
+
+code[class*="language"] {
+  background-color: #F6F9FB;
+  border: 1px solid darken(#F6F9FB, 10);
+  padding: 1em;
+}

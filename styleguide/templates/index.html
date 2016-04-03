@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }} | {{ description }}</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./bower_components//prism/themes/prism-coy.css">
+  <link rel="stylesheet" href="./assets/css/{{ name }}.style.css">
+</head>
+<body>
+  <div class="styleguide clearfix">
+
+    <aside class="styleguide__sidebar">
+      <ul class="nav">
+        {% for section in styleguide.sections %}
+        <li>
+          <a href="#">{{ section.title }}</a>
+          <ul>
+            {% for file in section.files %}
+            <li>
+              <a href="#{{file.attributes.name}}">{{file.attributes.title }}</a>
+            </li>
+            {% endfor %}
+          </ul>
+          {% endfor %}
+        </li>
+      </ul>
+    </aside>
+
+
+    <main class="styleguide__content">
+      {% for section in styleguide.sections %}
+      <div class="page-header">
+        <h1 id="{{ section.name }}">{{ section.title }}</h1>
+      </div>
+      {% for file in section.files %}
+      <div class="styleguide__component">
+          {{ file.content|safe }}
+      </div>
+      {% endfor %}
+      {% endfor %}
+    </main>
+  </div>
+
+  <!-- Javascripts -->
+  <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+  <script src="./bower_components/prism/prism.js"></script>
+  <script src="./assets/js/{{ name }}.script.js"></script>
+</body>
+</html>

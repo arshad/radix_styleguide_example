@@ -1,0 +1,25 @@
+// Helpers
+// -----------------------------------------------------------------------------
+
+// Color helpers
+// -----------------------------------------------------------------------------
+@each $color, $value in $colors {
+
+  // Background color
+  // Use as .bg-color--green.
+  .bg-color--#{$color} {
+    background-color: $value;
+  }
+
+  // Text color.
+  // Use as .text-color--green.
+  .text-color--#{$color} {
+    color: $value;
+  }
+
+  // Border color.
+  // Use as .border-color--green.
+  .border-color---#{$color} {
+    border-color: $value;
+  }
+}

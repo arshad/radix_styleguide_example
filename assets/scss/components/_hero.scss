@@ -1,0 +1,10 @@
+// Hero
+// -----------------------------------------------------------------------------
+.jumbotron {
+  padding: 30px;
+  border-radius: 5px;
+
+  @include breakpoint(md) {
+    padding: 60px;
+  }
+}

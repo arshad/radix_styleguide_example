@@ -1,0 +1,60 @@
+{
+  "name": "radix_styleguide_example",
+  "title": "Radix Styleguide Example",
+  "description": "A theme based on Radix.",
+  "browserSyncProxy" : "http://panopoly.dev",
+  "bowerDir": "./bower_components",
+  "css": {
+    "file" : "radix_styleguide_example.style.scss",
+    "src": [
+      "assets/scss/**/*.scss"
+    ],
+    "dest": "assets/css",
+    "includePaths": [
+      "./bower_components/bootstrap-sass/assets/stylesheets",
+      "./bower_components/font-awesome/scss",
+      "./bower_components/radix/scss"
+    ]
+  },
+  "images": {
+    "src": [
+      "assets/images/**/*"
+    ],
+    "dest": "assets/images/"
+  },
+  "fonts": {
+    "src": [
+      "./bower_components/font-awesome/fonts/**.*"
+    ],
+    "dest": "./assets/fonts/"
+  },
+  "styleguide": {
+    "path": "./styleguide",
+    "src": [
+      "./styleguide/**/*"
+    ],
+    "sections": [
+      {
+        "title" : "Base",
+        "tree": [
+          "base/colors",
+          "base/typography"
+        ]
+      },
+      {
+        "title" : "Components",
+        "tree": [
+          "components/buttons",
+          "components/form",
+          "components/hero"
+        ]
+      },
+      {
+        "title": "Content Types",
+        "tree": [
+          "content/blog"
+        ]
+      }
+    ]
+  }
+}
