@@ -1,19 +1,60 @@
-# Installation
+# Radix Styleguide Example
 
-{{Name}} theme uses [Gulp](http://gulpjs.com) to compile Sass. Gulp needs Node.
+This is a demo theme for the Radix Styleguide Builder.
 
-#### Step 1
-Make sure you have Node and npm installed. 
-You can read a guide on how to install node here: https://docs.npmjs.com/getting-started/installing-node
+The Radix Styleguide Builder is bundled inside the Radix theme (dev version). It is built using Markdown and Gulp.
 
-#### Step 2
-Install bower: `npm install -g bower`.
+The styleguide tree is built using the styleguide tree in `config.json`.
 
-#### Step 3
-Go to the root of {{Name}} theme and run the following commands: `npm run setup`.
+```
+"styleguide": {
+    "path": "./styleguide",
+    "src": [
+      "./styleguide/**/*"
+    ],
+    "sections": [
+      {
+        "title" : "Base",
+        "tree": [
+          "base/colors",
+          "base/typography"
+        ]
+      },
+      {
+        "title" : "Components",
+        "tree": [
+          "components/buttons",
+          "components/form",
+          "components/hero"
+        ]
+      },
+      {
+        "title": "Content Types",
+        "tree": [
+          "content/blog"
+        ]
+      }
+    ]
+  }
+```
 
-#### Step 4
-Update `browserSyncProxy` in **config.json**.
+## Installation
+1. Clone this repository to your Drupal themes directory: `$ git clone https://github.com/arshad/radix_styleguide_example.git`.
+2. Install npm and bower dependencies: `$ cd radix_styleguide_example && npm run setup`.
+3. Run Gulp to generate and serve your styleguide: `$ gulp styleguide`.
+4. You can now preview your styleguide at `http://localhost:3001`.
 
-#### Step 5
-Run the following command to compile Sass and watch for changes: `gulp`.
+Gulp will automatically detect changes from your theme Sass and load it into your styleguide.
+
+## Editing the styleguide.
+The Markdown files for the styleguide is located at `radix_styleguide_example/styleguide/src`. You can edit these files and Gulp will detect changes, build the styleguide and reload your browser.
+
+## Adding new files to the styleguide
+1. Create your Markdown file under `radix_styleguide_example/styleguide/src`.
+2. Add it to `config.json` under styleguide.
+3. Stop Gulp and run `$ gulp styleguide` again.
+
+## Theming the Styleguide
+1. Edit the template file at `radix_styleguide_example/styleguide/templates/index.html`.
+2. Stop Gulp and run `$ gulp styleguide` again.
+3. You can change the CSS for the Styleguide at `radix_styleguide_example/assets/scss/components/_styleguide.scss`
