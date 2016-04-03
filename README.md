@@ -2,6 +2,10 @@
 
 This is a demo theme for the Radix Styleguide Builder (not released yet). It is built using Markdown, Sass and Gulp.
 
+## Demo
+
+See http://www.arshad.io/radix_styleguide_example/styleguide/public/index.html.
+
 ## Installation
 1. Clone this repository to your Drupal themes directory: `$ git clone https://github.com/arshad/radix_styleguide_example.git`.
 2. Install npm and bower dependencies: `$ cd radix_styleguide_example && npm run setup`.
